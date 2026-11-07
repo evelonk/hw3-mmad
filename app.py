@@ -35,7 +35,7 @@ def predict_batch(table, model, features, threshold):
 model = load_model()
 config = json.loads((APP_DIR / 'config.json').read_text(encoding='utf-8'))
 test = load_test()
-features = config['features']
+features = test.drop(columns='target').columns.tolist()
 X_test = test[features]
 y_test = test['target']
 probabilities = test_proba(model, X_test)
