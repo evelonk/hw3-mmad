@@ -15,6 +15,13 @@ python -m pip install -r requirements.txt
 python -m streamlit run app.py
 ```
 
+для запуска нужен Python 3.13. если команда `python3.13` не найдена, но Python установлен через `uv`, используйте следующие команды из папки `wine_app` (macOS/Linux):
+```bash
+uv venv --python 3.13 .venv
+uv pip install --python .venv/bin/python -r requirements.txt
+.venv/bin/python -m streamlit run app.py
+```
+
 в windows окружение активируется командой `.venv\Scripts\activate`
 
 после запуска нужно открыть адрес из терминала
